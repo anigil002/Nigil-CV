@@ -1,0 +1,1290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulla Nigil - Talent Acquisition Professional</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a2463;
+            --secondary: #d4af37;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        .bg-primary { background-color: var(--primary); }
+        .bg-secondary { background-color: var(--secondary); }
+        .text-primary { color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        .border-primary { border-color: var(--primary); }
+        .border-secondary { border-color: var(--secondary); }
+        
+        .timeline-container {
+            position: relative;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .timeline-left {
+            left: 0;
+        }
+        
+        .timeline-right {
+            left: 50%;
+        }
+        
+        .timeline-left::after {
+            right: -10px;
+        }
+        
+        .timeline-right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-left::after, .timeline-right::after {
+                left: 21px;
+            }
+            
+            .timeline-right {
+                left: 0;
+            }
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background-color: var(--secondary);
+            position: relative;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+        
+        .project-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            color: white;
+        }
+        
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .project-card.expanded .project-details {
+            max-height: 500px;
+        }
+        
+        .toggle-details {
+            background: none;
+            border: none;
+            color: var(--secondary);
+            cursor: pointer;
+            font-weight: 600;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .toggle-details:focus {
+            outline: none;
+        }
+        
+        .counter {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .award-card {
+            border-left: 4px solid var(--secondary);
+            transition: transform 0.3s ease;
+        }
+        
+        .award-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-item:hover::after {
+            width: 100%;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .print-columns {
+            column-count: 2;
+            column-gap: 2rem;
+        }
+        
+         {
+            .print-columns {
+                column-count: 2;
+                column-gap: 2rem;
+            }
+            
+            body {
+                font-size: 12px;
+            }
+            
+            .container {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .print-columns {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-2">Abdulla Nigil</h1>
+                    <p class="text-xl md:text-2xl text-secondary font-medium">Talent Acquisition Professional</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-phone-alt mr-3 text-secondary"></i>
+                        <p>+971 588472610</p>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-envelope mr-3 text-secondary"></i>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8be5e2ece2e7a5f9eee8f9fee2ffeef9cbece6eae2e7a5e8e4e6">[email&#160;protected]</a></p>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-3 text-secondary"></i>
+                        <p>Dubai, UAE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4">
+            <ul class="flex flex-wrap justify-center py-4 space-x-1 md:space-x-6">
+                <li><a href="#profile" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Profile</a></li>
+                <li><a href="#experience" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Experience</a></li>
+                <li><a href="#skills" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Skills</a></li>
+                <li><a href="#achievements" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Achievements</a></li>
+                <li><a href="#awards" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Awards</a></li>
+                <li><a href="#portfolio" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Project Portfolio</a></li>
+                <li><a href="#contact" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section id="profile" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Professional Profile</h2>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md fade-in">
+                <p class="text-lg leading-relaxed mb-6">
+                    I am a data-driven recruitment professional with over 17 years of experience, focusing on securing talent for major engineering projects in the Middle East and India. Currently, I lead Talent Acquisition for Egis, developing strategies for various sectors and growing the team from a sole contributor to 21 members. Under my leadership, the workforce expanded from 200 to over 6,000 since 2015.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    I have created regional policies and integrated Talent Acquisition processes across five entities. Passionate about recruitment automation and innovative sourcing techniques, I strive to enhance recruitment efficiency through technology, using tools like Power BI and Python to improve hiring processes. My technical skills include ATS, Microsoft Power Platform, and programming languages like Python and VBA.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 fade-in">
+                <div class="text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="counter" data-target="17">0</div>
+                    <p class="text-gray-600 mt-2">Years of Experience</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="counter" data-target="21">0</div>
+                    <p class="text-gray-600 mt-2">Team Members</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="counter" data-target="1100">0</div>
+                    <p class="text-gray-600 mt-2">Annual Placements</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="counter" data-target="3000">0</div>
+                    <p class="text-gray-600 mt-2">Workforce Growth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Professional Experience</h2>
+            
+            <div class="timeline-container fade-in">
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-primary text-xl">Regional Talent Acquisition Manager</h3>
+                        <h4 class="text-secondary font-medium">Egis, Middle East | 2022 - Present</h4>
+                        <p class="mt-2">
+                            Leading a team of 21 recruitment professionals across UAE, Saudi Arabia, Qatar, Egypt, and India. Coordinating workforce growth for Aviation, Rail/Transit, Roads, and Urban Development sectors. Delivering over 1,100 annual placements while integrating talent acquisition processes across multiple entities.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-primary text-xl">Talent Acquisition Manager</h3>
+                        <h4 class="text-secondary font-medium">Egis, Saudi Arabia | 2019 - 2022</h4>
+                        <p class="mt-2">
+                            Led end-to-end recruitment for large-scale engineering projects across various sectors. Established regional Talent Acquisition function and processes. Implemented innovative sourcing strategies and digital talent acquisition initiatives.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-primary text-xl">Project Recruiter</h3>
+                        <h4 class="text-secondary font-medium">Egis Rail, Riyadh Metro Project | 2015 - 2019</h4>
+                        <p class="mt-2">
+                            Part of a four-member team that successfully recruited 1,200 specialized rail professionals for the Riyadh Metro Transit Consultants (RMTC) joint venture. Developed high-level recruitment dashboards to keep senior leadership apprised of hiring progress.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-primary text-xl">Recruitment Supervisor</h3>
+                        <h4 class="text-secondary font-medium">Almarai | 2012 - 2015</h4>
+                        <p class="mt-2">
+                            Managed high-volume hiring, recruiting over 11,000 employees in 2013 and 12,300 in 2014 for Corporate, IT, Transport, and Logistics divisions. Streamlined recruitment processes and improved candidate experience.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-primary text-xl">Senior Manager - Sourcing & Recruitment</h3>
+                        <h4 class="text-secondary font-medium">Talent Hunterz | 2010 - 2012</h4>
+                        <p class="mt-2">
+                            Led recruitment services for clients in construction, oil & gas, and infrastructure sectors across the Middle East. Managed end-to-end recruitment cycles and client relationships.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-primary text-xl">Recruitment Officer</h3>
+                        <h4 class="text-secondary font-medium">Pentascribe International | 2006 - 2010</h4>
+                        <p class="mt-2">
+                            Facilitated recruitment for engineering and construction roles in the Middle East. Conducted candidate screenings and managed recruitment documentation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Technical Skills</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-6">Recruitment Technology</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Applicant Tracking Systems (ATS)</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Microsoft Power BI</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Power Apps</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Power Automate</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Advanced Boolean Search</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-6">Programming & Analytics</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Excel VBA</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Python</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Data Analytics</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Predictive Modeling</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">React</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Achievements Section -->
+    <section id="achievements" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Key Achievements</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Workforce Expansion</h3>
+                    </div>
+                    <p>Led a 15x workforce growth at Egis, expanding from approximately 200 to over 3,000 employees in the Middle East region since 2015, supporting major infrastructure projects.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Recruitment Scale</h3>
+                    </div>
+                    <p>Consistently delivered over 1,100 annual placements across diverse engineering and technical disciplines while maintaining quality and cost-efficiency standards.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-handshake text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Employee Referral Program</h3>
+                    </div>
+                    <p>Launched an innovative employee referral program that generated 18% of all hires with faster time-to-fill rates compared to other sourcing channels.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-globe text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Localization Initiative</h3>
+                    </div>
+                    <p>Successfully increased the percentage of Saudi and Emirati nationals in the workforce through targeted recruitment campaigns, contributing to regional localization goals.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-project-diagram text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Process Integration</h3>
+                    </div>
+                    <p>Integrated talent acquisition processes across five Egis entities following acquisitions, creating standardized workflows and service level agreements.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-database text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Data-Driven Insights</h3>
+                    </div>
+                    <p>Developed advanced recruitment dashboards and predictive models using Power BI and Python, enabling data-driven decision-making and improved hiring success rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Awards & Recognition</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+                <div class="award-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary rounded-full p-3 mr-4">
+                            <i class="fas fa-trophy text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">2024 Visionary Award</h3>
+                    </div>
+                    <p class="mb-4">Awarded the 2024 Visionary Award for exceptional leadership in talent acquisition, which has significantly contributed to the organization's growth and success.</p>
+                    <blockquote class="italic text-gray-600 border-l-4 border-secondary pl-4 py-2">
+                        "Abdulla's innovative approach, coupled with his ability to foster a high-performing team and anticipate future talent needs, has been instrumental in securing top talent. His strategic thinking and commitment to professional development have positioned him as a visionary leader within our organization."
+                    </blockquote>
+                </div>
+                
+                <div class="award-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary rounded-full p-3 mr-4">
+                            <i class="fas fa-medal text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Appreciation Letter - Riyadh Metro Project</h3>
+                    </div>
+                    <p class="mb-4">Recognition from Carter R. Rohan, Vice President of Parsons International, Ltd. and RMTC Riyadh Metro Project Director, for exceptional recruitment contributions to the $16 billion Riyadh Metro program.</p>
+                    <blockquote class="italic text-gray-600 border-l-4 border-secondary pl-4 py-2">
+                        "Your expertise and skills in recruiting produced highly successful results for the Riyadh Metro Transit Consultants on the program. You demonstrated the standard of professionalism throughout your time on the program. All of your work in the Talent Management department has been of high quality and your resourcefulness, dependability, and integrity in carrying out your work has proven to be very valuable for the project, and the Joint Venture."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Project Portfolio</h2>
+            
+            <div class="mb-8 fade-in">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Rail & Metro Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Riyadh Metro Project -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/riyadh-metro.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Riyadh Metro Project</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">One of the world's largest metro developments, featuring six lines with 176.5 kilometers of track and 85 stations.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Value:</h5>
+                                    <p>$16 billion</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Riyadh, Saudi Arabia</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Successfully recruited 1,200 specialized rail professionals for the Riyadh Metro Transit Consultants (RMTC) joint venture as part of a four-member team.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Sourcing highly specialized rail engineers and technical professionals with metro project experience in a competitive market.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Doha Metro Project -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/doha-metro.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Doha Metro Project</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Major metro development that created passageways to several stadiums built for the FIFA 2022 World Cup.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Value:</h5>
+                                    <p>$36 billion</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Doha, Qatar</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Coordinated recruitment for engineering and technical roles, contributing to the successful development of Qatar's first metro system.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Meeting demanding project timelines ahead of the World Cup while maintaining quality standards in hiring.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Alexandria Abou Qir Metro -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/alexandria-metro.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Alexandria Abou Qir Metro</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Transformation of Alexandria's existing diesel train service into a modern electric metro system.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Scope:</h5>
+                                    <p>22-kilometer metro line with 20 stations (14 elevated, 6 ground-level)</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Alexandria, Egypt</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Staffing for Project Implementation Unit Support, Contract Management, and Construction Supervision roles.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Identifying professionals with experience in converting existing rail lines to electric metro systems.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Cairo High-Speed Rail -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/cairo-hsr.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Cairo High-Speed Rail</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">State-of-the-art rail network efficiently carrying both passengers and freight across Egypt.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Scope:</h5>
+                                    <p>Electric high-speed rail lines connecting Cairo to Abu Simbel via Luxor and Aswan (Blue Line) and Safaga to Qena (Red Line)</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Egypt</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Providing supervision services for construction and implementation, requiring specialized high-speed rail expertise.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Attracting international HSR specialists to a developing market while building local capabilities.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-8 fade-in">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Road & Infrastructure Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- King Fahd Causeway -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/king-fahd-causeway.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">King Fahd Causeway Project</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Enhancement of the vital link between Saudi Arabia and Bahrain with comprehensive refurbishment.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Scope:</h5>
+                                    <p>Condition and life assessment of the 25-kilometer causeway connecting Saudi Arabia and Bahrain</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Saudi Arabia - Bahrain</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Staffing for specialized bridge assessment, infrastructure engineering, and inspection roles.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Finding specialists in marine infrastructure assessment with experience in causeway maintenance in harsh environments.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Doha Expressways -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/doha-expressway.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Doha Expressways</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Major road infrastructure development enhancing connectivity throughout Doha, Qatar.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Value:</h5>
+                                    <p>Multi-billion dollar expressway network</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Doha, Qatar</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Hiring for road design, traffic engineering, and construction supervision positions to support the expressway development.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Meeting aggressive project schedules in preparation for the World Cup while navigating an ultra-competitive talent market.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Madinah BRT System -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/madinah-brt.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Madinah Bus Rapid Transit (BRT)</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Urban mobility enhancement project in one of Saudi Arabia's holiest cities, improving public transportation.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Scope:</h5>
+                                    <p>Comprehensive Bus Rapid Transit system with dedicated lanes, stations, and modern fleet</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Madinah, Saudi Arabia</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Staffing for urban transport planning, BRT operations, and construction management positions.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Finding BRT specialists with experience in the unique transportation needs of religious cities with pilgrimage seasons.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-8 fade-in">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Environmental & Building Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- NEOM Red Sea Restoration -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/neom-coral.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">NEOM Red Sea Restoration</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Innovative environmental project to establish the world's largest coral reef restoration initiative.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Scope:</h5>
+                                    <p>Design and construction of coral nurseries for the Reefscape Restoration initiative, including Primary Coral Nursery (PCN) and Development Coral Nursery (DCN)</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>NEOM, Saudi Arabia</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Hiring marine biologists, environmental engineers, and construction managers specialized in marine environments.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Sourcing rare specialized talent in coral reef restoration and marine conservation with experience in large-scale projects.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Dubai Exhibition Centre Expansion -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/dubai-exhibition.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Dubai Exhibition Centre Expansion</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Expansion of the Dubai Exhibition Centre at Expo City Dubai into the largest purpose-built exhibition venue in the region.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Value:</h5>
+                                    <p>$2.7 billion (AED 10 billion)</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Scope:</h5>
+                                    <p>1.2-kilometer facility with 180,000 square meters of exhibition space across 26 halls</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Dubai, UAE</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Staffing for architectural, structural, mechanical, electrical, and plumbing design roles, as well as sustainability specialists and BIM experts.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Attracting top architectural and engineering talent for a high-profile project aligned with Dubai's 2040 Urban Master Plan.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Diriyah Project -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/diriyah.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Diriyah Project</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Multidisciplinary design consultancy for Saudi Arabia's historic Diriyah development.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Value:</h5>
+                                    <p>$114 million (for consultancy)</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Diriyah, Saudi Arabia</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Hiring for architectural design, heritage conservation, and urban planning roles to support the development of this culturally significant site.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Finding specialists who could balance modern development needs with heritage preservation requirements in a UNESCO World Heritage context.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-8 fade-in">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Aviation & Water Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Saudi Airports Management -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/saudi-airports.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Saudi Airports Management</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Comprehensive consulting services for 26 airports across Saudi Arabia under Matarat Holding.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Scope:</h5>
+                                    <p>Establishment of phased project management portals, updating airport project management policies and procedures across 26 Saudi airports</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Various locations across Saudi Arabia</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Staffing for Air Traffic Management (ATM), airport development, design, operation, and maintenance specialists.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Coordinating recruitment across multiple geographic locations while ensuring consistency in technical capabilities and project management approaches.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Al Shuqaiq Desalination Plant -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/desalination.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Al Shuqaiq Desalination Plant</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Design review, site supervision, and contract management for a major reverse osmosis facility on the Red Sea Coast.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Scope:</h5>
+                                    <p>450,000 cubic meter capacity reverse osmosis (RO) desalination facility</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Shuqaiq, Saudi Arabia</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Hiring water treatment specialists, desalination experts, and construction supervisors with experience in large-scale water infrastructure.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Finding specialized talent in desalination technology with experience in the specific environmental conditions of the Red Sea.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Souq Al-Mubarakiya Project -->
+                    <div class="project-card bg-white">
+                        <div class="project-img" style="background-image: url('https://cdn.jsdelivr.net/gh/persianturtle/demo-images/kuwait-souq.jpg');">
+                            <div class="project-overlay">
+                                <h4 class="text-xl font-bold">Souq Al-Mubarakiya Development</h4>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700 mb-4">Construction Management Consultancy for the development and reconstruction of Kuwait's historic market.</p>
+                            <div class="project-details">
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Project Scope:</h5>
+                                    <p>Redevelopment and reconstruction of Kuwait's historic Souq Al-Mubarakiya</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Location:</h5>
+                                    <p>Kuwait City, Kuwait</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Recruitment Scope:</h5>
+                                    <p>Staffing for heritage conservation, urban renewal, and construction management positions with experience in traditional market reconstruction.</p>
+                                </div>
+                                <div class="py-2">
+                                    <h5 class="font-semibold text-primary">Key Challenges:</h5>
+                                    <p>Identifying professionals with the unique blend of heritage preservation expertise and modern construction techniques.</p>
+                                </div>
+                            </div>
+                            <button class="toggle-details mt-3">
+                                View Details <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Contact Me</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Contact Information</h3>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-phone-alt text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-500">Phone</p>
+                            <p class="font-medium">+971 588472610</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-envelope text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-500">Email</p>
+                            <p class="font-medium"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82ecebe5ebeeacf0e7e1f0f7ebf6e7f0c2e5efe3ebeeace1edef">[email&#160;protected]</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-500">Location</p>
+                            <p class="font-medium">Dubai, United Arab Emirates</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-500">LinkedIn</p>
+                            <p class="font-medium">linkedin.com/in/abdulla-nigil</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Send a Message</h3>
+                    
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" placeholder="Your name">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" placeholder="Your email">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" placeholder="Subject">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" placeholder="Your message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-primary text-white py-2 px-6 rounded-md hover:bg-opacity-90 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Abdulla Nigil</h3>
+                    <p class="text-gray-300">Talent Acquisition Professional</p>
+                </div>
+                
+                <div class="mt-4 md:mt-0">
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-secondary transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-secondary transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-secondary transition duration-300">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <p class="text-gray-300">© 2025 Abdulla Nigil. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Toggle project details
+        document.querySelectorAll('.toggle-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.project-card');
+                card.classList.toggle('expanded');
+                
+                const icon = this.querySelector('i');
+                if (card.classList.contains('expanded')) {
+                    this.innerHTML = 'Hide Details <i class="fas fa-chevron-up ml-1"></i>';
+                } else {
+                    this.innerHTML = 'View Details <i class="fas fa-chevron-down ml-1"></i>';
+                }
+            });
+        });
+        
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width;
+            });
+        }
+        
+        // Animate counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const increment = target / speed;
+                
+                let count = 0;
+                const updateCount = () => {
+                    if (count < target) {
+                        count += increment;
+                        counter.innerText = Math.floor(count);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCount();
+            });
+        }
+        
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Run animations on load
+        window.addEventListener('load', () => {
+            animateOnScroll();
+            animateSkillBars();
+            animateCounters();
+        });
+        
+        // Run animations on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
