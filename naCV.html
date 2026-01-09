@@ -61,31 +61,95 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0a2463;
-            --secondary: #d4af37;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
+            --primary: #062C3A;        /* Dark teal - main headers, nav */
+            --secondary: #F4A41D;      /* Orange/gold - accents, buttons */
+            --accent: #00A4A6;         /* Teal cyan - skill bars, highlights */
+            --accent-alt: #00617E;     /* Deep teal blue */
+            --light: #FFFFFF;          /* Pure white background */
+            --light-tint: #97B8BB;     /* Light teal gray for subtle backgrounds */
+            --dark: #062C3A;           /* Dark teal for text */
+            --gray: #5D858B;           /* Muted teal gray */
+            --success: #00A78B;        /* Green teal */
+            --highlight: #ABC100;      /* Lime green */
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--light);
             color: var(--dark);
             overflow-x: hidden;
         }
-        
+
         .bg-primary { background-color: var(--primary); }
         .bg-secondary { background-color: var(--secondary); }
         .text-primary { color: var(--primary); }
         .text-secondary { color: var(--secondary); }
         .border-primary { border-color: var(--primary); }
         .border-secondary { border-color: var(--secondary); }
-        
+
+        /* Override Tailwind gray backgrounds with white */
+        .bg-gray-50 { background-color: #FFFFFF !important; }
+        .bg-white { background-color: #FFFFFF !important; }
+
+        /* Section alternating backgrounds */
+        section:nth-child(odd) { background-color: #FFFFFF; }
+        section:nth-child(even) { background-color: rgba(151, 184, 187, 0.1); }
+
+        /* Text colors */
+        .text-gray-600, .text-gray-700 { color: var(--gray) !important; }
+        .text-gray-500 { color: var(--light-tint) !important; }
+        .text-gray-300 { color: rgba(255, 255, 255, 0.7) !important; }
+
+        /* Card styling with new colors */
+        .shadow-md {
+            box-shadow: 0 4px 12px rgba(6, 44, 58, 0.1) !important;
+        }
+
+        /* Focus states */
+        a:focus, button:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Form input focus */
+        input:focus, textarea:focus {
+            border-color: var(--accent) !important;
+            box-shadow: 0 0 0 3px rgba(0, 164, 166, 0.2) !important;
+        }
+
+        /* Border colors */
+        .border-gray-300 { border-color: var(--light-tint) !important; }
+
+        /* Tag/badge backgrounds */
+        .bg-gray-100 { background-color: rgba(151, 184, 187, 0.2) !important; }
+
+        /* Red color for required fields */
+        .text-red-500 { color: #C8313F !important; }
+
+        /* Hover states using new colors */
+        .hover\:text-secondary:hover { color: var(--secondary) !important; }
+        .hover\:bg-secondary:hover { background-color: var(--secondary) !important; }
+        .hover\:bg-opacity-90:hover { opacity: 0.9; }
+
+        /* Footer background transparency */
+        footer .bg-white.bg-opacity-20 {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+        }
+
+        /* Achievement and award card icons */
+        .bg-primary.rounded-full {
+            background-color: var(--accent-alt) !important;
+        }
+
+        /* Current badge */
+        .bg-secondary.text-white.text-xs {
+            background-color: var(--success) !important;
+        }
+
         .timeline-container {
             position: relative;
         }
@@ -112,7 +176,7 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background-color: var(--secondary);
+            background-color: var(--accent);
             border: 4px solid var(--primary);
             border-radius: 50%;
             top: 15px;
@@ -164,7 +228,7 @@
         
         .skill-bar {
             height: 8px;
-            background-color: #e9ecef;
+            background-color: rgba(151, 184, 187, 0.3);
             border-radius: 4px;
             margin-bottom: 20px;
             position: relative;
@@ -173,7 +237,7 @@
         .skill-progress {
             height: 100%;
             border-radius: 4px;
-            background-color: var(--secondary);
+            background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
             position: relative;
             width: 0;
             transition: width 1.5s ease;
@@ -205,7 +269,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+            background: linear-gradient(to bottom, rgba(6,44,58,0.1), rgba(6,44,58,0.85));
             display: flex;
             align-items: flex-end;
             padding: 20px;
@@ -240,7 +304,7 @@
         .counter {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--accent);
         }
         
         .award-card {
@@ -263,7 +327,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: var(--secondary);
+            background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
             transition: width 0.3s ease;
         }
         
