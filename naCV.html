@@ -4,7 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulla Nigil - Talent Acquisition Professional</title>
+    <title>Abdulla Nigil - Talent Acquisition Professional | Regional TA Leader</title>
+    <meta name="description" content="Abdulla Nigil - Regional Talent Acquisition Manager with 17+ years of experience in engineering recruitment across Middle East, India, and North America. Expert in data-driven recruitment, team leadership, and HR technology.">
+    <meta name="keywords" content="Talent Acquisition, Recruitment, HR, Human Resources, Middle East, Engineering Recruitment, Rail Projects, Infrastructure, Power BI, ATS, Dubai, Saudi Arabia">
+    <meta name="author" content="Abdulla Nigil">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://abdullanigil.com">
+
+    <!-- Open Graph / LinkedIn -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Abdulla Nigil - Talent Acquisition Professional">
+    <meta property="og:description" content="Regional Talent Acquisition Manager with 17+ years leading recruitment for major engineering projects. Managing teams across Middle East, India, and North America.">
+    <meta property="og:url" content="https://abdullanigil.com">
+    <meta property="profile:first_name" content="Abdulla">
+    <meta property="profile:last_name" content="Nigil">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Abdulla Nigil - Talent Acquisition Professional">
+    <meta name="twitter:description" content="Regional TA Manager with 17+ years in engineering recruitment across Middle East, India, and North America.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>AN</text></svg>">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Abdulla Nigil",
+        "jobTitle": "Regional Talent Acquisition Manager",
+        "description": "Data-driven recruitment professional with over 17 years of experience in securing talent for major engineering projects",
+        "url": "https://abdullanigil.com",
+        "sameAs": [
+            "https://linkedin.com/in/abdulla-nigil"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dubai",
+            "addressCountry": "UAE"
+        },
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Egis"
+        },
+        "knowsLanguage": ["English", "Malayalam", "Hindi"],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Bachelor of Computer Applications"
+        }
+    }
+    </script>
+
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -235,20 +286,24 @@
             column-count: 2;
             column-gap: 2rem;
         }
-        
-         {
+
+        @media print {
             .print-columns {
                 column-count: 2;
                 column-gap: 2rem;
             }
-            
+
             body {
                 font-size: 12px;
             }
-            
+
             .container {
                 width: 100%;
                 max-width: 100%;
+            }
+
+            .no-print {
+                display: none !important;
             }
         }
         
@@ -260,6 +315,9 @@
     </style>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#profile" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded z-50">Skip to main content</a>
+
     <!-- Header Section -->
     <header class="bg-primary text-white py-12">
         <div class="container mx-auto px-4">
@@ -267,18 +325,25 @@
                 <div>
                     <h1 class="text-4xl md:text-5xl font-bold mb-2">Abdulla Nigil</h1>
                     <p class="text-xl md:text-2xl text-secondary font-medium">Talent Acquisition Professional</p>
+                    <button onclick="window.print()" class="mt-4 bg-secondary hover:bg-opacity-90 text-white font-medium py-2 px-6 rounded-lg transition duration-300 no-print" aria-label="Download CV as PDF">
+                        <i class="fas fa-download mr-2" aria-hidden="true"></i>Download CV
+                    </button>
                 </div>
                 <div class="mt-6 md:mt-0">
                     <div class="flex items-center mb-2">
-                        <i class="fas fa-phone-alt mr-3 text-secondary"></i>
-                        <p>+971 588472610</p>
+                        <i class="fas fa-phone-alt mr-3 text-secondary" aria-hidden="true"></i>
+                        <a href="tel:+971588472610" class="hover:text-secondary transition duration-300">+971 588472610</a>
                     </div>
                     <div class="flex items-center mb-2">
-                        <i class="fas fa-envelope mr-3 text-secondary"></i>
-                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8be5e2ece2e7a5f9eee8f9fee2ffeef9cbece6eae2e7a5e8e4e6">[email&#160;protected]</a></p>
+                        <i class="fas fa-envelope mr-3 text-secondary" aria-hidden="true"></i>
+                        <a href="mailto:anigil002@gmail.com" class="hover:text-secondary transition duration-300">anigil002@gmail.com</a>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fab fa-linkedin-in mr-3 text-secondary" aria-hidden="true"></i>
+                        <a href="https://linkedin.com/in/abdulla-nigil" target="_blank" rel="noopener noreferrer" class="hover:text-secondary transition duration-300">linkedin.com/in/abdulla-nigil</a>
                     </div>
                     <div class="flex items-center">
-                        <i class="fas fa-map-marker-alt mr-3 text-secondary"></i>
+                        <i class="fas fa-map-marker-alt mr-3 text-secondary" aria-hidden="true"></i>
                         <p>Dubai, UAE</p>
                     </div>
                 </div>
@@ -289,13 +354,14 @@
     <!-- Navigation -->
     <nav class="sticky top-0 bg-white shadow-md z-50">
         <div class="container mx-auto px-4">
-            <ul class="flex flex-wrap justify-center py-4 space-x-1 md:space-x-6">
+            <ul class="flex flex-wrap justify-center py-4 space-x-1 md:space-x-6" role="navigation" aria-label="Main navigation">
                 <li><a href="#profile" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Profile</a></li>
                 <li><a href="#experience" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Experience</a></li>
                 <li><a href="#skills" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Skills</a></li>
+                <li><a href="#education" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Education</a></li>
                 <li><a href="#achievements" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Achievements</a></li>
                 <li><a href="#awards" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Awards</a></li>
-                <li><a href="#portfolio" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Project Portfolio</a></li>
+                <li><a href="#portfolio" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Projects</a></li>
                 <li><a href="#contact" class="nav-item px-3 py-2 text-primary hover:text-secondary transition duration-300">Contact</a></li>
             </ul>
         </div>
@@ -307,10 +373,10 @@
             <h2 class="text-3xl font-bold text-primary mb-8 text-center">Professional Profile</h2>
             <div class="bg-gray-50 p-6 rounded-lg shadow-md fade-in">
                 <p class="text-lg leading-relaxed mb-6">
-                    I am a data-driven recruitment professional with over 17 years of experience, focusing on securing talent for major engineering projects in the Middle East and India. Currently, I lead Talent Acquisition for Egis, developing strategies for various sectors and growing the team from a sole contributor to 21 members. Under my leadership, the workforce expanded from 200 to over 6,000 since 2015.
+                    I am a data-driven recruitment professional with over 17 years of experience, focusing on securing talent for major engineering projects across the Middle East, India, and now North America. Currently, I lead Talent Acquisition for Egis North America, handpicked to establish the TA function from the ground up for an <strong>$850 million investment initiative</strong>. Previously, I grew the Middle East team from a sole contributor to 21 members, expanding workforce from 200 to over 3,000 since 2015.
                 </p>
                 <p class="text-lg leading-relaxed">
-                    I have created regional policies and integrated Talent Acquisition processes across five entities. Passionate about recruitment automation and innovative sourcing techniques, I strive to enhance recruitment efficiency through technology, using tools like Power BI and Python to improve hiring processes. My technical skills include ATS, Microsoft Power Platform, and programming languages like Python and VBA.
+                    I have created regional policies and integrated Talent Acquisition processes across five entities. A key achievement includes developing a comprehensive <strong>5-tier Skills Taxonomy Registry</strong> (Domain → Capability Pillar → Specialization → Skills) with detailed definitions and four proficiency levels. Passionate about recruitment automation and innovative sourcing techniques, I leverage tools like Power BI, Python, and the Microsoft Power Platform to drive data-driven hiring decisions.
                 </p>
             </div>
 
@@ -343,15 +409,26 @@
             <div class="timeline-container fade-in">
                 <div class="timeline-item timeline-right">
                     <div class="timeline-content">
-                        <h3 class="font-bold text-primary text-xl">Regional Talent Acquisition Manager</h3>
-                        <h4 class="text-secondary font-medium">Egis, Middle East | 2022 - Present</h4>
+                        <div class="inline-block bg-secondary text-white text-xs font-bold px-2 py-1 rounded mb-2">CURRENT</div>
+                        <h3 class="font-bold text-primary text-xl">Regional Talent Acquisition Manager - North America</h3>
+                        <h4 class="text-secondary font-medium">Egis, North America | June 2025 - Present</h4>
                         <p class="mt-2">
-                            Leading a team of 21 recruitment professionals across UAE, Saudi Arabia, Qatar, Egypt, and India. Coordinating workforce growth for Aviation, Rail/Transit, Roads, and Urban Development sectors. Delivering over 1,100 annual placements while integrating talent acquisition processes across multiple entities.
+                            Cherrypicked by the company to establish and manage the Talent Acquisition function from the ground up for North America. Leading recruitment strategy for a major expansion initiative backed by an <strong>$850 million USD investment over four years</strong>. Building the regional TA infrastructure, processes, and team to support aggressive growth targets across the Americas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-primary text-xl">Regional Talent Acquisition Manager</h3>
+                        <h4 class="text-secondary font-medium">Egis, Middle East | 2022 - June 2025</h4>
+                        <p class="mt-2">
+                            Led a team of 21 recruitment professionals across UAE, Saudi Arabia, Qatar, Egypt, and India. Coordinated workforce growth for Aviation, Rail/Transit, Roads, and Urban Development sectors. Delivered over 1,100 annual placements while integrating talent acquisition processes across multiple entities.
                         </p>
                     </div>
                 </div>
                 
-                <div class="timeline-item timeline-left">
+                <div class="timeline-item timeline-right">
                     <div class="timeline-content">
                         <h3 class="font-bold text-primary text-xl">Talent Acquisition Manager</h3>
                         <h4 class="text-secondary font-medium">Egis, Saudi Arabia | 2019 - 2022</h4>
@@ -361,7 +438,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item timeline-right">
+                <div class="timeline-item timeline-left">
                     <div class="timeline-content">
                         <h3 class="font-bold text-primary text-xl">Project Recruiter</h3>
                         <h4 class="text-secondary font-medium">Egis Rail, Riyadh Metro Project | 2015 - 2019</h4>
@@ -371,7 +448,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item timeline-left">
+                <div class="timeline-item timeline-right">
                     <div class="timeline-content">
                         <h3 class="font-bold text-primary text-xl">Recruitment Supervisor</h3>
                         <h4 class="text-secondary font-medium">Almarai | 2012 - 2015</h4>
@@ -381,7 +458,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item timeline-right">
+                <div class="timeline-item timeline-left">
                     <div class="timeline-content">
                         <h3 class="font-bold text-primary text-xl">Senior Manager - Sourcing & Recruitment</h3>
                         <h4 class="text-secondary font-medium">Talent Hunterz | 2010 - 2012</h4>
@@ -391,7 +468,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item timeline-left">
+                <div class="timeline-item timeline-right">
                     <div class="timeline-content">
                         <h3 class="font-bold text-primary text-xl">Recruitment Officer</h3>
                         <h4 class="text-secondary font-medium">Pentascribe International | 2006 - 2010</h4>
@@ -521,6 +598,67 @@
         </div>
     </section>
 
+    <!-- Education & Languages Section -->
+    <section id="education" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Education & Languages</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+                <!-- Education -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-graduation-cap text-white text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Education</h3>
+                    </div>
+
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h4 class="font-bold text-primary text-lg">Bachelor of Computer Applications (BCA)</h4>
+                        <p class="text-gray-600 mt-1">Comprehensive program covering programming, database management, software development, and IT fundamentals.</p>
+                        <p class="text-sm text-gray-500 mt-2">Foundation in technology that enables data-driven recruitment strategies and automation solutions.</p>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-language text-white text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Languages</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-secondary rounded-full mr-3" aria-hidden="true"></span>
+                                <span class="font-medium">English</span>
+                            </div>
+                            <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Professional</span>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-secondary rounded-full mr-3" aria-hidden="true"></span>
+                                <span class="font-medium">Malayalam</span>
+                            </div>
+                            <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Native</span>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-secondary rounded-full mr-3" aria-hidden="true"></span>
+                                <span class="font-medium">Hindi</span>
+                            </div>
+                            <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Fluent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Key Achievements Section -->
     <section id="achievements" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -580,11 +718,31 @@
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <div class="flex items-center mb-4">
                         <div class="bg-primary rounded-full p-3 mr-4">
-                            <i class="fas fa-database text-white text-xl"></i>
+                            <i class="fas fa-database text-white text-xl" aria-hidden="true"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-primary">Data-Driven Insights</h3>
                     </div>
                     <p>Developed advanced recruitment dashboards and predictive models using Power BI and Python, enabling data-driven decision-making and improved hiring success rates.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-sitemap text-white text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">5-Tier Skills Taxonomy Registry</h3>
+                    </div>
+                    <p>Designed and implemented a comprehensive skills taxonomy framework: <strong>Domain → Capability Pillar → Specialization → Skills</strong>. Each skill includes detailed definitions and four proficiency levels, enabling precise competency mapping and talent matching across the organization.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-rocket text-white text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">North America Expansion</h3>
+                    </div>
+                    <p>Handpicked to establish and lead Talent Acquisition for North America from the ground up, supporting an <strong>$850 million USD investment</strong> over four years. Building regional TA infrastructure to enable aggressive growth across the Americas.</p>
                 </div>
             </div>
         </div>
@@ -1096,70 +1254,72 @@
                     
                     <div class="flex items-center mb-4">
                         <div class="bg-primary rounded-full p-3 mr-4">
-                            <i class="fas fa-phone-alt text-white"></i>
+                            <i class="fas fa-phone-alt text-white" aria-hidden="true"></i>
                         </div>
                         <div>
                             <p class="text-gray-500">Phone</p>
-                            <p class="font-medium">+971 588472610</p>
+                            <a href="tel:+971588472610" class="font-medium text-primary hover:text-secondary transition duration-300">+971 588472610</a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center mb-4">
                         <div class="bg-primary rounded-full p-3 mr-4">
-                            <i class="fas fa-envelope text-white"></i>
+                            <i class="fas fa-envelope text-white" aria-hidden="true"></i>
                         </div>
                         <div>
                             <p class="text-gray-500">Email</p>
-                            <p class="font-medium"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82ecebe5ebeeacf0e7e1f0f7ebf6e7f0c2e5efe3ebeeace1edef">[email&#160;protected]</a></p>
+                            <a href="mailto:anigil002@gmail.com" class="font-medium text-primary hover:text-secondary transition duration-300">anigil002@gmail.com</a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center mb-4">
                         <div class="bg-primary rounded-full p-3 mr-4">
-                            <i class="fas fa-map-marker-alt text-white"></i>
+                            <i class="fas fa-map-marker-alt text-white" aria-hidden="true"></i>
                         </div>
                         <div>
                             <p class="text-gray-500">Location</p>
                             <p class="font-medium">Dubai, United Arab Emirates</p>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center">
                         <div class="bg-primary rounded-full p-3 mr-4">
-                            <i class="fab fa-linkedin-in text-white"></i>
+                            <i class="fab fa-linkedin-in text-white" aria-hidden="true"></i>
                         </div>
                         <div>
                             <p class="text-gray-500">LinkedIn</p>
-                            <p class="font-medium">linkedin.com/in/abdulla-nigil</p>
+                            <a href="https://linkedin.com/in/abdulla-nigil" target="_blank" rel="noopener noreferrer" class="font-medium text-primary hover:text-secondary transition duration-300">linkedin.com/in/abdulla-nigil</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold text-primary mb-4">Send a Message</h3>
-                    
-                    <form>
+
+                    <form action="mailto:anigil002@gmail.com" method="post" enctype="text/plain" aria-label="Contact form">
                         <div class="mb-4">
-                            <label for="name" class="block text-gray-700 mb-2">Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" placeholder="Your name">
+                            <label for="name" class="block text-gray-700 mb-2">Name <span class="text-red-500" aria-label="required">*</span></label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-20" placeholder="Your name" aria-required="true">
                         </div>
-                        
+
                         <div class="mb-4">
-                            <label for="email" class="block text-gray-700 mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" placeholder="Your email">
+                            <label for="email" class="block text-gray-700 mb-2">Email <span class="text-red-500" aria-label="required">*</span></label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-20" placeholder="Your email" aria-required="true">
                         </div>
-                        
+
                         <div class="mb-4">
                             <label for="subject" class="block text-gray-700 mb-2">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" placeholder="Subject">
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-20" placeholder="Subject">
                         </div>
-                        
+
                         <div class="mb-4">
-                            <label for="message" class="block text-gray-700 mb-2">Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary" placeholder="Your message"></textarea>
+                            <label for="message" class="block text-gray-700 mb-2">Message <span class="text-red-500" aria-label="required">*</span></label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-20" placeholder="Your message" aria-required="true"></textarea>
                         </div>
-                        
-                        <button type="submit" class="bg-primary text-white py-2 px-6 rounded-md hover:bg-opacity-90 transition duration-300">Send Message</button>
+
+                        <button type="submit" class="bg-primary text-white py-2 px-6 rounded-md hover:bg-opacity-90 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                            <i class="fas fa-paper-plane mr-2" aria-hidden="true"></i>Send Message
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1177,14 +1337,14 @@
                 
                 <div class="mt-4 md:mt-0">
                     <div class="flex space-x-4">
-                        <a href="#" class="bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-secondary transition duration-300">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="https://linkedin.com/in/abdulla-nigil" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-secondary transition duration-300" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-secondary transition duration-300">
-                            <i class="fab fa-twitter"></i>
+                        <a href="tel:+971588472610" class="bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-secondary transition duration-300" aria-label="Call Phone">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-secondary transition duration-300">
-                            <i class="fas fa-envelope"></i>
+                        <a href="mailto:anigil002@gmail.com" class="bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-secondary transition duration-300" aria-label="Send Email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -1196,7 +1356,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Toggle project details
         document.querySelectorAll('.toggle-details').forEach(button => {
             button.addEventListener('click', function() {
